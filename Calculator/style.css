@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to top, beige 0%, #252525 100%);
+  background-attachment: fixed;
+}
+
+.calculator {
+  width: 300px;
+  min-width: 300px;
+  box-sizing: border-box;
+  padding: 20px 25px 45px;
+  background: radial-gradient(
+    ellipse farthest-corner at 20% 65%,
+    #5e6470,
+    #161213
+  );
+  border-top-left-radius: 100% 30px;
+  border-top-right-radius: 100% 30px;
+  border-bottom-left-radius: 100% 60px;
+  border-bottom-right-radius: 100% 60px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7), 0 0 20px 0 rgba(0, 0, 0, 0.5),
+    0 0 25px 0 rgba(0, 0, 0, 0.3), 10px 0 4px 10px rgba(0, 0, 0, 0.3),
+    inset 0 0 3px 0 rgba(0, 0, 0, 0.7), inset 0 0 10px 0 rgba(0, 0, 0, 0.5),
+    inset 0 -25px 5px 0 rgba(0, 0, 0, 0.2),
+    inset 0 -5px 10px 0 rgba(255, 255, 255, 0.3);
+  user-select: none;
+}
+
+.calculator .calculator_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calculator_heading .calculator_title {
+  font-size: 25px;
+  font-family: "Play", "Russo One", sans-serif;
+  color: #eaeaea;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.calculator_sun-container .calculator_sub-battery {
+  width: 107px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #3d2115;
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent 26px,
+    rgba(255, 255, 255, 0.1) 26px,
+    rgba(255, 255, 255, 0.1) 27px
+  );
+
+  box-shadow: 0 -3px 5px -3px rgba(255, 255, 255, 0.2),
+    5px 0 3px -5px rgba(255, 255, 255, 0.8), 0 2px 5px -2px rgba(0, 0, 0, 0.5),
+    -3px 0 3px -1px rgba(0, 0, 0, 0.8), inset 0 -5px 3px -3px rgba(0, 0, 0, 0.5),
+    inset 5px 0 5px -2px rgba(0, 0, 0, 0.8);
+}
+
+.calculator .calculator_screen-container {
+  margin: 20px 0;
+}
+
+.calculator_screen-container .calculator_screen {
+  width: 100%;
+  height: 66px;
+  display: block;
+  border: 0;
+  text-align: right;
+  font-size: 45px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #000;
+  text-overflow: ellipsis;
+  font-family: "digital-7";
+  background-image: linear-gradient(-155deg, #44443a 0%, #656f66 100%);
+  box-shadow: 0 -4px 4px -3px rgba(255, 255, 255, 0.3),
+    5px 0 3px -5px rgba(255, 255, 255, 0.8), 0 5px 5px -3px rgba(0, 0, 0, 0.5),
+    -3px 0 3px -1px rgba(0, 0, 0, 0.8), inset 0 -5px 3px -3px rgba(0, 0, 0, 0.5),
+    inset 5px 0 5px -2px rgba(0, 0, 0, 0.8);
+}
+
+.calculator_screen-container .calculator_screen::placeholder {
+  color: #000;
+}
+
+.calculator .calculator_keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 40px;
+  gap: 15px;
+}
+
+.calculator_keyboard .button {
+  font-size: 30px;
+  padding: 0;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: linear-gradient(25deg, #525a65, #3b424c);
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 2px -1px 1px 0 rgba(255, 255, 255, 0.2),
+    inset -3px 2px 5px 0 rgba(0, 0, 0, 0.2), 4px 1px 1px 0 rgba(0, 0, 0, 0.5),
+    -1px -3px 1px 0 rgba(0, 0, 0, 0.5), 4px -3px 1px 0 rgba(0, 0, 0, 0.5),
+    -1px -1px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.calculator_keyboard .button:active {
+  box-shadow: inset 2px -1px 1px 0 rgba(255, 255, 255, 0.2),
+    inset -3px 2px 5px 0 rgba(0, 0, 0, 0.2), 3px 1px 1px 0 rgba(0, 0, 0, 0.5),
+    -1px -1px 1px 0 rgba(0, 0, 0, 0.5), 3px -1px 1px 0 rgba(0, 0, 9, 0.5),
+    -1px -1px 5px 0 rgba(0, 0, 0, 0.5), 4px 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translate(1px, -1px);
+}
+
+.calculator_keyboard .button.num {
+  font-size: 25px;
+}
+
+.calculator_keyboard .clear {
+  font-size: 22px;
+  background: #a80d2a;
+  color: beige;
+  font-family: sans-serif;
+}
+
+.calculator_keyboard .button.parcent {
+  font-size: 25px;
+}
+.calculator_keyboard .button.minus {
+  padding-bottom: 3px;
+}
+
+.calculator_keyboard .button.dot {
+  font-size: 30px;
+  padding-bottom: 15px;
+}
